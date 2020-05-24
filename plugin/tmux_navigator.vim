@@ -16,6 +16,9 @@ function! s:VimNavigate(direction)
 endfunction
 
 if !get(g:, 'tmux_navigator_no_mappings', 0)
+  nnoremap <silent> <c-c> :TmuxHorizontalPane<cr>
+  nnoremap <silent> <c-v> :TmuxVerticalPane<cr>
+  nnoremap <silent> <c-x> :TmuxClosePane<cr>
   nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
   nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
   nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
@@ -24,6 +27,9 @@ if !get(g:, 'tmux_navigator_no_mappings', 0)
 endif
 
 if empty($TMUX)
+  command! TmuxHorizontalPane call s:VimNavigate('c')
+  command! TmuxVerticalPane call s:VimNavigate('v')
+  command! TmuxClosePane call s:VimNavigate('x')
   command! TmuxNavigateLeft call s:VimNavigate('h')
   command! TmuxNavigateDown call s:VimNavigate('j')
   command! TmuxNavigateUp call s:VimNavigate('k')
@@ -32,6 +38,9 @@ if empty($TMUX)
   finish
 endif
 
+command! TmuxHorizontalPane call s:VimNavigate('c')
+command! TmuxVerticalPane call s:VimNavigate('v')
+command! TmuxClosePane call s:VimNavigate('x')
 command! TmuxNavigateLeft call s:TmuxAwareNavigate('h')
 command! TmuxNavigateDown call s:TmuxAwareNavigate('j')
 command! TmuxNavigateUp call s:TmuxAwareNavigate('k')
