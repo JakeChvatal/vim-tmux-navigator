@@ -3,7 +3,7 @@
 " Additionally, <C-\> toggles between last active vim splits/tmux panes.
 
 " compatible vim actions
-nnoremap <c-c> :sp<CR>
+nnoremap <C-c> :sp<CR>
 nnoremap <c-v> :vsp<CR>
 nnoremap <c-x> <C-W>c
 
