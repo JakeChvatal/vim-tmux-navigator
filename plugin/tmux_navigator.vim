@@ -2,6 +2,11 @@
 " no more windows in that direction, forwards the operation to tmux.
 " Additionally, <C-\> toggles between last active vim splits/tmux panes.
 
+" compatible vim actions
+nnoremap <c-c> :sp<CR>
+nnoremap <c-v> :vsp<CR>
+nnoremap <c-x> <C-W>c
+
 if exists("g:loaded_tmux_navigator") || &cp || v:version < 700
   finish
 endif

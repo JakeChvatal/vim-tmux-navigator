@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Collection of various test strings that could be the output of the tmux
-# 'pane_current_comamnd' message. Included as regression test for updates to
+# 'pane_current_command' message. Included as regression test for updates to
 # the inline grep pattern used in the `.tmux.conf` configuration
 
 set -e
